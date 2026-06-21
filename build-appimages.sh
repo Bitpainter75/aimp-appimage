@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Baut 3 AppImages aus der installierten AIMP-6.00-Paketstruktur:
+# Baut 3 AppImages aus der installierten AIMP-6.00-Paketstruktur (Build 3069b):
 #   AIMP-6.00-x86_64.AppImage
 #   AudioConverter-6.00-x86_64.AppImage
 #   AdvancedTagEditor-6.00-x86_64.AppImage
@@ -45,6 +45,10 @@ bundle_portable_libs() {
     local libdir="$1/opt/aimp"
     local libs=(
         /usr/lib/libbass-aimp.so
+        /usr/lib/libavcodec-aimp.so.61
+        /usr/lib/libavfilter-aimp.so.10
+        /usr/lib/libavutil-aimp.so.59
+        /usr/lib/libswresample-aimp.so.5
         /usr/lib/libicudata.so.78
         /usr/lib/libicuuc.so.78
         /usr/lib/libxml2.so.16
