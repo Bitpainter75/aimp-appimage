@@ -72,6 +72,7 @@ Beyond AIMP's own libraries from `/opt/aimp/`, the build script additionally bun
 | Library | Reason |
 |---|---|
 | `libbass-aimp.so` | Part of the AIMP Arch package — not present on other distros |
+| `libavcodec-aimp.so.61` + `libavfilter-aimp.so.10` + `libavutil-aimp.so.59` + `libswresample-aimp.so.5` | AIMP-specific FFmpeg libs — loaded by `aimp_inputFFmpeg.so`, not present on other distros |
 | `libicudata.so.78` + `libicuuc.so.78` | SONAME-pinned to v78; Fedora 44 ships ICU 77 (`libicuuc.so.77`) |
 | `libxml2.so.16` | New SONAME since libxml2 2.13 (Arch); Fedora 44 still uses `.so.2` (libxml2 2.12.x) |
 | `libglycin-2.so.0` | GNOME image loader — absent on KDE-based systems (Bazzite, Aurora) |
@@ -89,7 +90,7 @@ AIMP must be installed on the **build system** (Arch / CachyOS). The script read
 
 ```bash
 # Install from the bundled package
-sudo pacman -U aimp-6.00-3067b-x86_64.pkg.tar.zst
+sudo pacman -U aimp-6.00-3069b-x86_64.pkg.tar.zst
 ```
 
 `appimagetool` must be available and executable. If it lives on a network share (CIFS/NFS with `noexec`), copy it to `/tmp` first:
