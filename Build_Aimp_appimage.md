@@ -22,7 +22,7 @@ Das AIMP-Paket muss auf dem **Build-System** (CachyOS/Arch) installiert sein. Da
 
 ```bash
 # Paket installieren (Arch / CachyOS)
-sudo pacman -U aimp-6.00-3067b-x86_64.pkg.tar.zst
+sudo pacman -U aimp-6.00-3069b-x86_64.pkg.tar.zst
 ```
 
 ### appimagetool
@@ -97,6 +97,7 @@ Neben den AIMP-eigenen Libs aus `/opt/aimp/` bündelt das Skript automatisch fol
 | Lib | Grund |
 |---|---|
 | `libbass-aimp.so` | Teil des AIMP-Arch-Pakets — auf Fedora/anderen Distros nicht vorhanden |
+| `libavcodec-aimp.so.61` + `libavfilter-aimp.so.10` + `libavutil-aimp.so.59` + `libswresample-aimp.so.5` | AIMP-eigene FFmpeg-Libs — werden von `aimp_inputFFmpeg.so` geladen, existieren nicht auf anderen Distros |
 | `libicudata.so.78` + `libicuuc.so.78` | Soname-versioniert; Fedora 44 hat ICU 77 (`libicuuc.so.77`) |
 | `libxml2.so.16` | Neue Soname seit libxml2 2.13 (Arch); Fedora 44 nutzt noch `.so.2` (libxml2 2.12.x) |
 | `libglycin-2.so.0` | GNOME-Imageloader — fehlt auf KDE-basierten Systemen (Bazzite, Aurora) |
@@ -119,6 +120,10 @@ AppDir/
       AIMP / AIMPac / AIMPate   # Binaries
       libFLAC.so, libLAME.so, libMAC.so, libsoxrate.so, libwavpack.so
       libbass-aimp.so           # gebündelt aus /usr/lib/
+      libavcodec-aimp.so.61     # gebündelt aus /usr/lib/
+      libavfilter-aimp.so.10    # gebündelt aus /usr/lib/
+      libavutil-aimp.so.59      # gebündelt aus /usr/lib/
+      libswresample-aimp.so.5   # gebündelt aus /usr/lib/
       libicudata.so.78.3        # gebündelt aus /usr/lib/
       libicuuc.so.78.3          # gebündelt aus /usr/lib/
       libxml2.so.16.1.3         # gebündelt aus /usr/lib/
@@ -135,4 +140,4 @@ AppDir/
 
 - Alle drei AppImages sind voneinander unabhängig und bündeln jeweils die gesamte AIMP-Datenbasis.
 - AIMP speichert Nutzerdaten weiterhin im Home-Verzeichnis (`~/.config/AIMP/` bzw. `~/.local/share/AIMP/`). Die AppImages verändern keine Systemdateien.
-- Getestet auf CachyOS x86_64 mit AIMP 6.00 Build 3067b. Ziel-Systeme: Bazzite / Aurora (Fedora 44-Basis).
+- Getestet auf CachyOS x86_64 mit AIMP 6.00 Build 3069b. Ziel-Systeme: Bazzite / Aurora (Fedora 44-Basis).
