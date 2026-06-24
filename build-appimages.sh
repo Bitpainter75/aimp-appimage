@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Baut 3 AppImages aus der installierten AIMP-6.00-Paketstruktur (Build 3069b):
+# Baut 3 AppImages aus der installierten AIMP-6.00-Paketstruktur (Build 3070b):
 #   AIMP-6.00-x86_64.AppImage
 #   AudioConverter-6.00-x86_64.AppImage
 #   AdvancedTagEditor-6.00-x86_64.AppImage
